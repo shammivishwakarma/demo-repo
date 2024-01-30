@@ -17,3 +17,12 @@ jobs:
           with:
             r-version: 4.2.3
             use-public-rspm: true
+        - name: Install dependencies
+          run: |
+            install.packages(c('rsconnect'))
+        - name: Deploy
+          uses: rstudio/actions/connect-publish@main
+          with:
+            url: https://dev.positconnect.analytics.kellogg.com
+            api-key: C8e4eTUQbyPvQGDQTS0Zf7VEjHGe6g2o
+            access-type: logged_in
