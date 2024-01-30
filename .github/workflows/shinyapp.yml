@@ -18,8 +18,10 @@ jobs:
             r-version: 4.2.3
             use-public-rspm: true
         - name: Install dependencies
-          run: |
-            install.packages(`rsconnect`)
+          shell: Rscript {0}
+#          run: |
+          run: Rscript "install.packages('rsconnect')"
+#            install.packages(`rsconnect`)
         - name: Deploy
           uses: rstudio/actions/connect-publish@main
           with:
