@@ -4,6 +4,8 @@ on:
      branches: [feature_shammi]
    pull_request:
      branches: [feature_shammi]
+env:
+    HTTPS_PROXY: https://dev.positconnect.analytics.kellogg.com
     
 jobs:
     test-and-connect-publish:
@@ -24,6 +26,6 @@ jobs:
         - name: Deploy
           uses: rstudio/actions/connect-publish@main
           with:
-            url: https://dev.positconnect.analytics.kellogg.com
+            url: $HTTPS_PROXY
             api-key: C8e4eTUQbyPvQGDQTS0Zf7VEjHGe6g2o
             access-type: logged_in
