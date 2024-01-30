@@ -5,7 +5,7 @@ on:
    pull_request:
      branches: [feature_shammi]
 env:
-    HTTPS_PROXY: https://dev.positconnect.analytics.kellogg.com
+    HTTPS_PROXY: dev.positconnect.analytics.kellogg.com
     
 jobs:
     test-and-connect-publish:
