@@ -19,7 +19,7 @@ jobs:
             use-public-rspm: true
         - name: Install dependencies
           run: |
-            install.packages('rsconnect')
+            install.packages("rsconnect")
         - name: Deploy
           uses: rstudio/actions/connect-publish@main
           with:
