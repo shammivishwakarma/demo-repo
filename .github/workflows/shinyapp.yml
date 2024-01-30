@@ -19,9 +19,8 @@ jobs:
             use-public-rspm: true
         - name: Install dependencies
           shell: Rscript {0}
-#          run: |
-          run: Rscript "install.packages('rsconnect')"
-#            install.packages(`rsconnect`)
+          run: |
+               install.packages(c(“rsconnect”, “jsonlite”))
         - name: Deploy
           uses: rstudio/actions/connect-publish@main
           with:
