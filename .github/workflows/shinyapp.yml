@@ -20,7 +20,7 @@ jobs:
         - name: Install dependencies
           run: |
                 Rscripts -e "install.packages('remotes');
-#               remotes::install_github('rstudio/rsconnect')"
+                remotes::install_github('rstudio/rsconnect')"
         - name: Deploy
           uses: rstudio/actions/connect-publish@main
           with:
