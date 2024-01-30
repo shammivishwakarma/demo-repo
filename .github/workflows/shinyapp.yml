@@ -4,8 +4,6 @@ on:
      branches: [feature_shammi]
    pull_request:
      branches: [feature_shammi]
-env:
-    HTTPS_PROXY: dev.positconnect.analytics.kellogg.com
     
 jobs:
     test-and-connect-publish:
@@ -20,12 +18,12 @@ jobs:
             r-version: 4.2.3
             use-public-rspm: true
         - name: Install dependencies
-#          shell: Rscript {0}
           run: |
-#               Rscript -e 'install.packages(c(“rsconnect”, “jsonlite”))'
+                install.packages('remotes')
+#               remotes::install_github('rstudio/rsconnect')
         - name: Deploy
           uses: rstudio/actions/connect-publish@main
           with:
-            url: $HTTPS_PROXY
+            url: https://dev.positconnect.analytics.kellogg.com
             api-key: C8e4eTUQbyPvQGDQTS0Zf7VEjHGe6g2o
             access-type: logged_in
