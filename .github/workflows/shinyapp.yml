@@ -20,7 +20,7 @@ jobs:
         - name: Install dependencies
 #          shell: Rscript {0}
           run: |
-               Rscript -e 'install.packages(c(“rsconnect”, “jsonlite”))'
+#               Rscript -e 'install.packages(c(“rsconnect”, “jsonlite”))'
         - name: Deploy
           uses: rstudio/actions/connect-publish@main
           with:
