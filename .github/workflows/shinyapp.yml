@@ -1,11 +1,11 @@
- name: test-and-connect-publish
-  on:
-    push:
-      branches: [feature_shammi]
-    pull_request:
-      branches: [feature_shammi]
-  
-  jobs:
+name: test-and-connect-publish
+on:
+   push:
+     branches: [feature_shammi]
+   pull_request:
+     branches: [feature_shammi]
+    
+jobs:
     test-and-connect-publish:
       runs-on: ubuntu-22.04
       steps:
