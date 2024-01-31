@@ -19,7 +19,5 @@ jobs:
             use-public-rspm: true
         - name: Install dependencies
           run: |
-                install.packages(c('remotes', 'rsconnect'))
-                remotes::install_deps('dependencies = True)
-
-		
+            install.packages(c('remotes', 'rsconnect'))
+            remotes::install_deps('dependencies = True)
