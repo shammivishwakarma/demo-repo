@@ -19,8 +19,8 @@ jobs:
             use-public-rspm: true
         - name: Install dependencies
           run: |
-                Rscript -e "install.packages('remotes');
-                remotes::install_github('rstudio/rsconnect')"
+                Rscript -e "install.packages('rstudio/rsconnect')"
+     #           remotes::install_github('rstudio/rsconnect')"
         - name: Deploy
           uses: rstudio/actions/connect-publish@main
           with:
