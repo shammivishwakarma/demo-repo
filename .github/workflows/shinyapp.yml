@@ -21,7 +21,5 @@ jobs:
           run: |
                 install.packages(c('remotes', 'rsconnect'))
                 remotes::install_deps('dependencies = True)
-        - name: Deploy App
-          run:  |
-		      library(rsconnect)
-			  deployApp('demo-repo/app.R')
+
+		
