@@ -19,11 +19,9 @@ jobs:
             use-public-rspm: true
         - name: Install dependencies
           run: |
-                Rscript -e "install.packages('rstudio/rsconnect')"
-     #           remotes::install_github('rstudio/rsconnect')"
-        - name: Deploy
-          uses: rstudio/actions/connect-publish@main
-          with:
-            url: https://dev.positconnect.analytics.kellogg.com
-            api-key: C8e4eTUQbyPvQGDQTS0Zf7VEjHGe6g2o
-            access-type: logged_in
+                install.packages(c('remotes', 'rsconnect'))
+                remotes::install_deps('dependencies = True)
+        - name: Deploy App
+          run:  |
+		      library(rsconnect)
+			  deployApp('demo-repo/app.R')
