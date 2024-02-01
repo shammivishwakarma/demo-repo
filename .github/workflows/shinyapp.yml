@@ -17,7 +17,11 @@ jobs:
           with:
             r-version: 4.2.3
             use-public-rspm: true
-        - name: Install dependencies
+        - name: Test Shiny App
+          shell: Rscript {0}
           run: |
-            install.packages(c('remotes', 'rsconnect'))
-            remotes::install_deps('dependencies = True)
+            shinyapptest::app()
+        - name: Create manifest.json
+          shell: Rscript {0}
+          run: |
+            rsconnect::writeManifest()
